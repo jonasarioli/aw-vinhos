@@ -49,7 +49,7 @@ public class VinhosController {
 	
 	@GetMapping
 	public ModelAndView pesquisar(VinhoFilter vinhoFilter) {
-		ModelAndView mv = new ModelAndView("/vinho/pesquisa-vinhos");
+		ModelAndView mv = new ModelAndView("vinho/pesquisa-vinhos");
 		mv.addObject("vinhos", vinhos.findByNomeContainingIgnoreCase(
 				Optional.ofNullable(vinhoFilter.getNome()).orElse("%")));
 		return mv;
